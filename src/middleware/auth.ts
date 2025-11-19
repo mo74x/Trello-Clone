@@ -1,8 +1,10 @@
 import type { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { Server } from 'socket.io';
 
 export interface AuthRequest extends Request {
   userId?: string;
+  io?: Server;
 }
 
 const jwtSecret = process.env.JWT_SECRET;
